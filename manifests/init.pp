@@ -40,8 +40,8 @@ class tightvncserver(
 
     exec { "${name}_triggeronstartup":
       command   => $tightvncserver::params::triggeronstartupexec,
-      cwd       => $rtb::params::executefrom,
-      path      => $rtb::params::execlaunchpaths,
+      cwd       => $tightvncserver::params::executefrom,
+      path      => $tightvncserver::params::execlaunchpaths,
       require   => User["${name}_tightvncuser"],
       logoutput => true,
     }
